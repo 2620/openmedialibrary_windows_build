@@ -8,6 +8,7 @@ PREFIX="$BASE/$NAME"
 curl -sO https://www.python.org/ftp/python/${PYTHON_VERSION}/python-${PYTHON_VERSION}.post1-embed-amd64.zip
 curl -sO http://blog.alivate.com.au/wp-content/uploads/2018/10/poppler-0.68.0_x86.7z
 curl -sLO https://dist.torproject.org/torbrowser/8.0.4/tor-win32-0.3.4.9.zip
+curl -sO curl https://bootstrap.pypa.io/get-pip.py
 
 ls -lah
 
@@ -28,7 +29,7 @@ mv Tor tor2
 mv tor2 tor
 rm -rf Data
 
-"$PREFIX/python.exe" -m ensurepip
+"$PREFIX/python.exe" get-pip.py
 pwd
 ls -lah
 
