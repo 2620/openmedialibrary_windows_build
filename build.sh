@@ -23,12 +23,12 @@ mv poppler/pdftocairo.exe .
 mv poppler/pdftotext.exe .
 rm -rf poppler
 
-unzip "$PREFIX/tor-win32-0.3.4.9.zip"
+unzip "$BASE/tor-win32-0.3.4.9.zip"
 mv Tor tor
 rm -rf Data
 
-./python3.exe -m ensurepip
-
+"$PREFIX/python3.exe" -m ensurepip
+pwd
 ls -lah
 
 ls Scripts
