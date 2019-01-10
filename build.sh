@@ -29,13 +29,10 @@ mv Tor tor2
 mv tor2 tor
 rm -rf Data
 
-"$PREFIX/python.exe" get-pip.py
-pwd
-ls -lah
+"$PREFIX/python.exe" "$BASE/get-pip.py"
 
 ls Scripts
 Scripts/pip.exe install -r requirements.txt
 
 cd "$BASE"
 7z a "$PREFIX.zip" "$NAME"
-ls -lah
