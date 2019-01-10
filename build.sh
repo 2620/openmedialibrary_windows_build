@@ -37,7 +37,7 @@ sys.path.append('Lib\\site-packages')
 from pip._internal import main
 main()
 EOF
-"$PREFIX/python.exe"  pip-cmd.py install -r requirements.txt
+"$PREFIX/python.exe"  pip-cmd.py install -r "$BASE/requirements.txt"
 ls Lib/site-packages
 
 cd "$BASE"
