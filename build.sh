@@ -1,5 +1,5 @@
 #
-set -e
+#set -e
 PYTHON_VERSION=3.7.2
 BASE=`pwd`
 NAME=platform_win64
@@ -13,7 +13,7 @@ ls -lah
 
 mkdir -p "$PREFIX"
 cd "$PREFIX"
-7z e "$BASE/python-${PYTHON_VERSION}.post1-embed-amd64.zip"
+unzip "$BASE/python-${PYTHON_VERSION}.post1-embed-amd64.zip"
 mkdir poppler
 cd poppler
 7z e "$BASE/poppler-0.68.0_x86.7z"
@@ -23,7 +23,7 @@ mv poppler/pdftocairo.exe .
 mv poppler/pdftotext.exe .
 rm -rf poppler
 
-7z e "$PREFIX/tor-win32-0.3.4.9.zip"
+unzip "$PREFIX/tor-win32-0.3.4.9.zip"
 mv Tor tor
 rm -rf Data
 
