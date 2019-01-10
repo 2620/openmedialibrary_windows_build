@@ -31,9 +31,13 @@ rm -rf Data
 
 "$PREFIX/python.exe" "$BASE/get-pip.py"
 
-ls Scripts
-Scripts/pip3.7.exe install -r requirements.txt
-
+cat > pip-cmd.py << EOF
+import sys
+sys.path.append('Lib\\site-packages')
+from pip._internal import main
+main()
+EOF
+"$PREFIX/python.exe"  pip-cmd.py install -r requirements.txt
 ls Lib/site-packages
 
 cd "$BASE"
