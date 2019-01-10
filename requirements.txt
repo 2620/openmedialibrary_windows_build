@@ -1,0 +1,8 @@
+lxml
+simplejson
+ed25519>=1.4
+SQLAlchemy==1.0.12
+pyopenssl>=0.15
+pyCrypto>=2.6.1
+pillow
+netifaces
