@@ -32,7 +32,9 @@ rm -rf Data
 "$PREFIX/python.exe" "$BASE/get-pip.py"
 
 ls Scripts
-Scripts/pip.exe install -r requirements.txt
+Scripts/pip3.7.exe install -r requirements.txt
+
+ls Lib/site-packages
 
 cd "$BASE"
 7z a "$PREFIX.zip" "$NAME"
