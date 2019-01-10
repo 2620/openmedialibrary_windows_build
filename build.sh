@@ -24,16 +24,17 @@ mv poppler/pdftotext.exe .
 rm -rf poppler
 
 unzip "$BASE/tor-win32-0.3.4.9.zip"
-mv Tor tor
+mv Tor tor2
+mv tor2 tor
 rm -rf Data
 
-"$PREFIX/python3.exe" -m ensurepip
+"$PREFIX/python.exe" -m ensurepip
 pwd
 ls -lah
 
 ls Scripts
-Scripts/pip3.7.exe install -r requirements.txt
+Scripts/pip.exe install -r requirements.txt
 
 cd "$BASE"
-7z a "$NAME.tar.gz" "$NAME"
+7z a "$PREFIX.zip" "$NAME"
 ls -lah
