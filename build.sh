@@ -5,16 +5,20 @@ BASE=`pwd`
 NAME=platform_win64
 PREFIX="$BASE/$NAME"
 
-curl -sO https://www.python.org/ftp/python/${PYTHON_VERSION}/python-${PYTHON_VERSION}.post1-embed-amd64.zip
 curl -sO http://blog.alivate.com.au/wp-content/uploads/2018/10/poppler-0.68.0_x86.7z
 curl -sLO https://dist.torproject.org/torbrowser/8.0.4/tor-win32-0.3.4.9.zip
 curl -sO https://bootstrap.pypa.io/get-pip.py
 
 ls -lah
 
+choco install python
+
 mkdir -p "$PREFIX"
 cd "$PREFIX"
-unzip "$BASE/python-${PYTHON_VERSION}.post1-embed-amd64.zip"
+ls /
+ls /mnt
+find / -type d | grep Python37
+cp -r /mnt/c/Python37 python37
 mkdir poppler
 cd poppler
 7z e "$BASE/poppler-0.68.0_x86.7z"
@@ -29,16 +33,8 @@ mv Tor tor2
 mv tor2 tor
 rm -rf Data
 
-"$PREFIX/python.exe" "$BASE/get-pip.py"
-
-cat > pip-cmd.py << EOF
-import sys
-sys.path.append('Lib\\site-packages')
-from pip._internal import main
-main()
-EOF
-"$PREFIX/python.exe"  pip-cmd.py install -r "$BASE/requirements.txt"
-ls Lib/site-packages
+"$PREFIX/python37/Scripts/pip.exe" install -r "$BASE/requirements.txt"
+ls python37/Lib/site-packages
 
 cd "$BASE"
 7z a "$PREFIX.zip" "$NAME"
