@@ -15,7 +15,7 @@ choco install python
 
 mkdir -p "$PREFIX"
 cd "$PREFIX"
-cp -r C:\Python37 python37
+cp -r C:\\Python37 python37
 mkdir poppler
 cd poppler
 7z e "$BASE/poppler-0.68.0_x86.7z"
