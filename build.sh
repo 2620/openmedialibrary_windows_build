@@ -19,7 +19,7 @@ ls -la C:\\Python37\\Lib\\site-packages
 
 cp -r C:\\Python37 "$PREFIX"
 cd "$PREFIX"
-rm -rf Doc Lib/test
+rm -rf Doc Lib/test Lib/__pycache__
 
 cd "$BASE"
 curl -sO http://blog.alivate.com.au/wp-content/uploads/2018/10/poppler-0.68.0_x86.7z
