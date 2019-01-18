@@ -12,8 +12,8 @@ choco install python
 set
 export CL="\"-FIC:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\include\\stdint.h\" $CL"
 
-"C:\\Python37\\Scripts\\pip.exe" install winrandom
 "C:\\Python37\\Scripts\\pip.exe" install -r "$BASE/requirements.txt"
+sed -i "s/import winrandom/from . import winrandom/g" "C:\\Python37\\Lib\\site-packages\Crypto\Random\\OSRNG\nt.py"
 
 echo SYSTEM
 ls -la C:\\Python37\\Lib\\site-packages
