@@ -15,7 +15,7 @@ rm -rf Doc Lib/test
 
 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat"
 set
-export CL="-FI'C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\include\\stdint.h' $CL"
+export CL="\"-FIC:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\include\\stdint.h\" $CL"
 
 "$PREFIX/Scripts/pip.exe" install -r "$BASE/requirements.txt"
 ls Lib/site-packages
