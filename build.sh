@@ -6,19 +6,20 @@ PREFIX="$BASE/$NAME"
 
 curl -sO https://bootstrap.pypa.io/get-pip.py
 
-ls -lah
-
 choco install python
-cp -r C:\\Python37 "$PREFIX"
-cd "$PREFIX"
-rm -rf Doc Lib/test
 
 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat"
 set
 export CL="\"-FIC:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\include\\stdint.h\" $CL"
 
-"$PREFIX/Scripts/pip.exe" install -r "$BASE/requirements.txt"
-ls Lib/site-packages
+"C:\\Pythoon37\\Scripts\\pip.exe" install -r "$BASE/requirements.txt"
+
+echo SYSTEM
+ls -la C:\\Python37\\Lib\\site-packages
+
+cp -r C:\\Python37 "$PREFIX"
+cd "$PREFIX"
+rm -rf Doc Lib/test
 
 cd "$BASE"
 curl -sO http://blog.alivate.com.au/wp-content/uploads/2018/10/poppler-0.68.0_x86.7z
