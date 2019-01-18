@@ -12,6 +12,7 @@ choco install python
 set
 export CL="\"-FIC:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\include\\stdint.h\" $CL"
 
+"C:\\Python37\\Scripts\\pip.exe" install winrandom
 "C:\\Python37\\Scripts\\pip.exe" install -r "$BASE/requirements.txt"
 
 echo SYSTEM
@@ -20,6 +21,7 @@ ls -la C:\\Python37\\Lib\\site-packages
 cp -r C:\\Python37 "$PREFIX"
 cd "$PREFIX"
 rm -rf Doc Lib/test Lib/__pycache__
+"$PREFIX\\python.exe" "$BASE/test.py"
 
 cd "$BASE"
 curl -sO http://blog.alivate.com.au/wp-content/uploads/2018/10/poppler-0.68.0_x86.7z
