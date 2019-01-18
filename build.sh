@@ -13,6 +13,8 @@ ls -lah
 choco install python
 cp -r C:\\Python37 "$PREFIX"
 cd "$PREFIX"
+rm -rf Doc Lib/test
+
 mkdir poppler
 cd poppler
 7z e "$BASE/poppler-0.68.0_x86.7z"
@@ -26,6 +28,8 @@ unzip "$BASE/tor-win32-0.3.4.9.zip"
 mv Tor tor2
 mv tor2 tor
 rm -rf Data
+
+export CL=-FI"%VCINSTALLDIR%Tools\\MSVC\\14.11.25503\\include\\stdint.h"
 
 "$PREFIX/Scripts/pip.exe" install -r "$BASE/requirements.txt"
 ls Lib/site-packages
