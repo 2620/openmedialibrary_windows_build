@@ -14,10 +14,10 @@ cd "$PREFIX"
 rm -rf Doc Lib/test
 
 ls "/mnt/c/Program Files (x86)/Microsoft Visual Studio 14.0/VC/"
-#"/mnt/c/Program Files (x86)/Microsoft Visual Studio 14.0/VC/vcvarsall"
+"/mnt/c/Program Files (x86)/Microsoft Visual Studio 14.0/VC/vcvarsall.bat"
 set
-ls "/mnt/c/Program Files (x86)/Microsoft Visual Studio 14.0/VC/INCLUDE"
-export CL="-FI'C:\\Program Files (x86)\\Microsoft Visual Studio 14.0VC\\INCLUDE\\stdint.h' $CL"
+ls "/mnt/c/Program Files (x86)/Microsoft Visual Studio 14.0/VC/include"
+export CL="-FI'C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\include\\stdint.h' $CL"
 
 "$PREFIX/Scripts/pip.exe" install -r "$BASE/requirements.txt"
 ls Lib/site-packages
