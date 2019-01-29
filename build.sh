@@ -7,7 +7,7 @@ cd "$BASE"
 curl -sLO https://www.rarlab.com/rar/unrarsrc-5.7.1.tar.gz
 tar xzf unrarsrc-5.7.1.tar.gz
 cd unrar
-make lib
+cmake lib
 ls -la
 cp unrar.dll "$PREFIX/unrar.ddl"
 
