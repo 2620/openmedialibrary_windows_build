@@ -4,12 +4,12 @@ NAME=platform_win64
 PREFIX="$BASE/$NAME"
 
 cd "$BASE"
-curl -sLO https://www.rarlab.com/rar/unrarsrc-5.7.1.tar.gz
-tar xzf unrarsrc-5.7.1.tar.gz
+curl -sLO https://www.rarlab.com/rar/UnRARDLL.exe
+mkdir unrar
 cd unrar
-cmake lib
+"$BASE\\UnRARDLL.exe"
 ls -la
-cp unrar.dll "$PREFIX/unrar.ddl"
+cp UnRAR.dll "$PREFIX/unrar.ddl"
 
 choco install python
 
