@@ -9,7 +9,7 @@ cd "$BASE"
 curl -sLO https://www.rarlab.com/rar/UnRARDLL.exe
 mkdir unrar
 cd unrar
-unrar.exe -x "$BASE\\UnRARDLL.exe"
+unrar.exe x "$BASE\\UnRARDLL.exe"
 ls -la
 cp x64/UnRAR.dll "$PREFIX/unrar.ddl"
 
