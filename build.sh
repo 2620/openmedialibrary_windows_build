@@ -3,13 +3,15 @@ BASE=`pwd`
 NAME=platform_win64
 PREFIX="$BASE/$NAME"
 
+choco install unrar
+
 cd "$BASE"
 curl -sLO https://www.rarlab.com/rar/UnRARDLL.exe
 mkdir unrar
 cd unrar
-"$BASE\\UnRARDLL.exe"
+unrar.exe -x "$BASE\\UnRARDLL.exe"
 ls -la
-cp UnRAR.dll "$PREFIX/unrar.ddl"
+cp x64/UnRAR.dll "$PREFIX/unrar.ddl"
 
 choco install python
 
