@@ -12,7 +12,7 @@ cd unrar
 unrar.exe x "$BASE\\UnRARDLL.exe"
 ls -la
 ls -la x64
-cp x64\\unRAR.dll "$PREFIX\\unrar.dll"
+cp x64\\UnRAR64.dll "$PREFIX\\unrar.dll"
 
 choco install python
 
