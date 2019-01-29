@@ -3,6 +3,14 @@ BASE=`pwd`
 NAME=platform_win64
 PREFIX="$BASE/$NAME"
 
+cd "$BASE"
+curl -sLO https://www.rarlab.com/rar/unrarsrc-5.7.1.tar.gz
+tar xzf unrarsrc-5.7.1.tar.gz
+cd unrar
+make lib
+ls -la
+cp unrar.dll "$PREFIX/unrar.ddl"
+
 choco install python
 
 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat"
@@ -41,3 +49,4 @@ rm -rf Data
 
 cd "$BASE"
 7z a "$PREFIX.zip" "$NAME"
+
