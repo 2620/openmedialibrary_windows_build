@@ -3,17 +3,6 @@ BASE=`pwd`
 NAME=platform_win64
 PREFIX="$BASE/$NAME"
 
-choco install unrar
-
-cd "$BASE"
-curl -sLO https://www.rarlab.com/rar/UnRARDLL.exe
-mkdir unrar
-cd unrar
-unrar.exe x "$BASE\\UnRARDLL.exe"
-ls -la
-ls -la x64
-cp x64\\UnRAR64.dll "$PREFIX\\unrar.dll"
-
 choco install python
 
 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat"
@@ -49,6 +38,18 @@ unzip "$BASE/tor-win32-0.3.4.9.zip"
 mv Tor tor2
 mv tor2 tor
 rm -rf Data
+
+choco install unrar
+cd "$BASE"
+curl -sLO https://www.rarlab.com/rar/UnRARDLL.exe
+mkdir unrar
+cd unrar
+unrar.exe x "$BASE\\UnRARDLL.exe"
+ls -la
+ls -la x64
+cp x64\\UnRAR64.dll "$PREFIX\\unrar.dll"
+cd "$BASE"
+rm -r unrar
 
 cd "$BASE"
 7z a "$PREFIX.zip" "$NAME"
