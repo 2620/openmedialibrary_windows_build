@@ -32,9 +32,9 @@ mv poppler/pdftotext.exe .
 rm -rf poppler
 
 cd "$BASE"
-curl -sLO https://dist.torproject.org/torbrowser/8.0.4/tor-win32-0.3.4.9.zip
+curl -sLO https://dist.torproject.org/torbrowser/8.0.5/tor-win32-0.3.5.7.zip
 cd "$PREFIX"
-unzip "$BASE/tor-win32-0.3.4.9.zip"
+unzip "$BASE/tor-win32-0.3.5.7.zip"
 mv Tor tor2
 mv tor2 tor
 rm -rf Data
