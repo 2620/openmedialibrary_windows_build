@@ -21,6 +21,7 @@ rm -rf Doc Lib/test Lib/__pycache__
 "$PREFIX\\python.exe" "$BASE/test.py"
 
 cd "$BASE"
+# http://blog.alivate.com.au/poppler-windows/#comment-44887
 curl -sO http://blog.alivate.com.au/wp-content/uploads/2018/10/poppler-0.68.0_x86.7z
 mkdir "$PREFIX/poppler"
 cd "$PREFIX/poppler"
@@ -32,9 +33,11 @@ mv poppler/pdftotext.exe .
 rm -rf poppler
 
 cd "$BASE"
-curl -sLO https://dist.torproject.org/torbrowser/8.0.5/tor-win32-0.3.5.7.zip
+TOR_VERSION=8.5.5
+TOR_WIN32=tor-win32-0.4.1.5.zip
+curl -sLO https://dist.torproject.org/torbrowser/${TOR_VERSION}/${TOR_WIN32}
 cd "$PREFIX"
-unzip "$BASE/tor-win32-0.3.5.7.zip"
+unzip "$BASE/$TOR_WIN32"
 mv Tor tor2
 mv tor2 tor
 rm -rf Data
